@@ -66,7 +66,7 @@ module WashOutHelper
 
     if param.struct?
       if !defined.include?(param.basic_type)
-        xml.tag! "xsd:complexType", :name => param.basic_type, :maxOccurs => 'unbounded' do
+        xml.tag! "xsd:complexType", :name => param.basic_type do
           attrs, elems = [], []
           param.map.each do |value|
             more << value if value.struct?
